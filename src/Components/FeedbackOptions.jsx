@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-export default function FeedbackOptions (props) {
-    props.map(option => {
-        return <button type="button" className="button">{option}</button>
-    })
+class FeedbackOptions extends Component {
+    render() {
+        const options = this.props.options
+        return <div className="centerButtons">{options.map((option, index) => (
+    <button key = {index} type="button" className="button"> { option } </button>
+    ))}</div>
+    }
 }
+
+export default FeedbackOptions
